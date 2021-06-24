@@ -37,6 +37,6 @@ Very rudimentary in styling. Could do with being wrapped in a component library 
 ## Assumptions
 
 ### API
-The single API endpoint isn't scalable or optimal, so I wrapped up calls to that in a local utils file. Depending on how this wasgoing into production, I'd be looking to move that either into the API itself, or as an interceptor for the API.
+The single API endpoint isn't scalable or optimal, so I wrapped up calls to that in a local utils file. Depending on how this was going into production, I'd be looking to move that either into the API itself, or as an interceptor for the API.
 
 I thought about trimming out the superflous fields not required for the UI, but have left them for now since the benefit is pretty negligable with the size of the data set.
