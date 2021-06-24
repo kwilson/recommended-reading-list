@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.isLoading {
+  align-items: center;
+  background: #efefef;
+  justify-content: center;
+  min-height: 10rem;
+}

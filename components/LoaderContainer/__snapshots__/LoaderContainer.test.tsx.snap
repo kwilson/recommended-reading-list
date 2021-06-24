@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoaderContainer /> renders as expected when loading 1`] = `
+<DocumentFragment>
+  <div
+    class="container isLoading"
+  >
+    <div
+      class="notification"
+      data-testid="loader"
+    >
+      Loading...
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<LoaderContainer /> renders as expected when not loading 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <p
+      data-testid="child-item-content"
+    >
+      Child Item
+    </p>
+  </div>
+</DocumentFragment>
+`;
