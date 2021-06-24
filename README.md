@@ -1,33 +1,42 @@
-# NextJS Typescript Boilerplate
+# Recommended Reading List
 
-Bootstrap a developer-friendly NextJS app configured with:
+## Running the app
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
-
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### Dev
 
 ```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
+npm install
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Prod
+
+```bash
+npm install
+npm run build
+npm run start
+```
+
+## Notes/Improvements
+
+### Framework
+As I mentioned, I've not used Next.js much in the past (apart from testing out static site generation), so I thought I'd give it another try as part of this - always nice to use a coding excercise to learn new things.
+
+The main improvements I'd make around that stack specifically is to switch to using SSR for the details page. I started off trying that but quickly realised that was going to take more time than I had. So I ended up just using basic loading-on-mount.
+
+### Error handling
+If this was a production app, I'd add in more user-friendly error handling around dealing with failed API calls. Either error boundary or specific actions on the page.
+
+I'd probably lean more towards selective hiding of elements on error (a la Netflix) e.g. hiding the 'other books by this author' section completely if the call fails since it's not a critical path.
+
+Again, out of scope for the time given for this.
+
+### UI
+Very rudimentary in styling. Could do with being wrapped in a component library to clean up the styles.
+
+## Assumptions
+
+### API
+The single API endpoint isn't scalable or optimal, so I wrapped up calls to that in a local utils file. Depending on how this wasgoing into production, I'd be looking to move that either into the API itself, or as an interceptor for the API.
+
+I thought about trimming out the superflous fields not required for the UI, but have left them for now since the benefit is pretty negligable with the size of the data set.
