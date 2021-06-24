@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookDetails /> redirects if the book fails to load 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="not-found"
+  >
+    <h1>
+      Not Found
+    </h1>
+    <p>
+      Sorry, the book you are trying to view has not been found.
+    </p>
+    <p>
+      <a
+        href="/"
+      >
+        Back to book list
+      </a>
+    </p>
+  </div>
+</DocumentFragment>
+`;
