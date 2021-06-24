@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookDetails /> renders as expected when loaded with no related books 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="book-details"
+  >
+    <h1
+      class="title"
+      data-testid="title"
+    >
+      title value
+    </h1>
+    <div
+      class="author"
+    >
+      by 
+      <span
+        data-testid="author"
+      >
+        author value
+      </span>
+    </div>
+    <div
+      class="isbn"
+    >
+      ISBN: 
+      <span
+        data-testid="isbn"
+      >
+        isbn value
+      </span>
+    </div>
+    <div
+      class="image"
+    >
+      <img
+        alt="title value book cover"
+        class="image"
+        data-testid="image"
+        src="cover value"
+      />
+    </div>
+    <aside
+      class="otherBooks"
+    >
+      <h2>
+        Other books by this author
+      </h2>
+      <div
+        class="container"
+      >
+        <div
+          class="container"
+        >
+          <div
+            data-testid="empty-book-list"
+          >
+            <p>
+              Sorry, there are no books to display.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<BookDetails /> renders as expected when loaded with related books 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="book-details"
+  >
+    <h1
+      class="title"
+      data-testid="title"
+    >
+      title value
+    </h1>
+    <div
+      class="author"
+    >
+      by 
+      <span
+        data-testid="author"
+      >
+        author value
+      </span>
+    </div>
+    <div
+      class="isbn"
+    >
+      ISBN: 
+      <span
+        data-testid="isbn"
+      >
+        isbn value
+      </span>
+    </div>
+    <div
+      class="image"
+    >
+      <img
+        alt="title value book cover"
+        class="image"
+        data-testid="image"
+        src="cover value"
+      />
+    </div>
+    <aside
+      class="otherBooks"
+    >
+      <h2>
+        Other books by this author
+      </h2>
+      <div
+        class="container"
+      >
+        <div
+          class="container"
+        >
+          <div
+            data-testid="book-list-items"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="details"
+              >
+                <h2
+                  class="title"
+                  data-testid="book-title"
+                >
+                  title value 2
+                </h2>
+                <div
+                  class="author"
+                >
+                  by 
+                  <span
+                    data-testid="book-author"
+                  >
+                    author value
+                  </span>
+                </div>
+                <div
+                  class="link"
+                  data-testid="book-link"
+                >
+                  <a
+                    href="/%20value%202"
+                  >
+                    More Info
+                  </a>
+                </div>
+              </div>
+              <div
+                class="cover"
+              >
+                <img
+                  alt="title value 2 book cover"
+                  class="coverImage"
+                  data-testid="book-image"
+                  src="cover value 2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<BookDetails /> renders as expected when loading 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="book-details"
+  >
+    <h1
+      class="title"
+      data-testid="title"
+    >
+      title value
+    </h1>
+    <div
+      class="author"
+    >
+      by 
+      <span
+        data-testid="author"
+      >
+        author value
+      </span>
+    </div>
+    <div
+      class="isbn"
+    >
+      ISBN: 
+      <span
+        data-testid="isbn"
+      >
+        isbn value
+      </span>
+    </div>
+    <div
+      class="image"
+    >
+      <img
+        alt="title value book cover"
+        class="image"
+        data-testid="image"
+        src="cover value"
+      />
+    </div>
+    <aside
+      class="otherBooks"
+    >
+      <h2>
+        Other books by this author
+      </h2>
+      <div
+        class="container isLoading"
+      >
+        <div
+          class="notification"
+          data-testid="loader"
+        >
+          Loading...
+        </div>
+      </div>
+    </aside>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<BookDetails /> renders content as expected 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="book-details"
+  >
+    <h1
+      class="title"
+      data-testid="title"
+    >
+      title value
+    </h1>
+    <div
+      class="author"
+    >
+      by 
+      <span
+        data-testid="author"
+      >
+        author value
+      </span>
+    </div>
+    <div
+      class="isbn"
+    >
+      ISBN: 
+      <span
+        data-testid="isbn"
+      >
+        isbn value
+      </span>
+    </div>
+    <div
+      class="image"
+    >
+      <img
+        alt="title value book cover"
+        class="image"
+        data-testid="image"
+        src="cover value"
+      />
+    </div>
+    <aside
+      class="otherBooks"
+    >
+      <h2>
+        Other books by this author
+      </h2>
+      <div
+        class="container isLoading"
+      >
+        <div
+          class="notification"
+          data-testid="loader"
+        >
+          Loading...
+        </div>
+      </div>
+    </aside>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<BookDetails /> renders content as expected when there is no ISBN 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="book-details"
+  >
+    <h1
+      class="title"
+      data-testid="title"
+    >
+      title value
+    </h1>
+    <div
+      class="author"
+    >
+      by 
+      <span
+        data-testid="author"
+      >
+        author value
+      </span>
+    </div>
+    <div
+      class="isbn"
+    >
+      ISBN: 
+      <span
+        data-testid="isbn"
+      >
+        not available
+      </span>
+    </div>
+    <div
+      class="image"
+    >
+      <img
+        alt="title value book cover"
+        class="image"
+        data-testid="image"
+        src="cover value"
+      />
+    </div>
+    <aside
+      class="otherBooks"
+    >
+      <h2>
+        Other books by this author
+      </h2>
+      <div
+        class="container isLoading"
+      >
+        <div
+          class="notification"
+          data-testid="loader"
+        >
+          Loading...
+        </div>
+      </div>
+    </aside>
+  </div>
+</DocumentFragment>
+`;

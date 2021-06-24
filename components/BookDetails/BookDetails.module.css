@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  grid-template-areas:
+    'title'
+    'author'
+    'isbn'
+    'image'
+    'otherBooks';
+}
+
+@media screen and (min-width: 760px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content max-content min-content;
+    gap: 1rem;
+    grid-template-areas:
+      'title title'
+      'author author'
+      'image isbn'
+      'image otherBooks';
+  }
+}
+
+.title {
+  grid-area: title;
+  margin-bottom: 0;
+}
+.image {
+  grid-area: image;
+}
+.image img {
+  border: solid 1px var(--border-color);
+  height: auto;
+  max-width: 100%;
+}
+.author {
+  grid-area: author;
+}
+.isbn {
+  grid-area: isbn;
+  align-self: start;
+}
+.otherBooks {
+  grid-area: otherBooks;
+  align-self: start;
+}
