@@ -20,11 +20,14 @@ export interface IBookDataResponse {
 
 export interface IBook {
   id: string;
-  cover: string;
-  isbn: string | null;
   title: string;
-  subtitle: string;
   author: string;
+  cover: string;
+}
+
+export interface IBookDetails extends IBook {
+  isbn: string | null;
+  subtitle: string;
   published: string;
   publisher: string | null;
   pages: number | null;
@@ -34,25 +37,72 @@ export interface IBook {
 
 const endpoint = 'https://hokodo-frontend-interview.netlify.app/data.json';
 
+async function getBooksData(): Promise<IBookDataResponse> {
+  const data = await fetch(endpoint);
+  const values: IBookDataResponse = await data.json();
+
+  return values;
+}
+
 export const getBooks = async (): Promise<IBook[]> => {
   try {
-    const data = await fetch(endpoint);
-    const values: IBookDataResponse = await data.json();
-
-    return values.books.map((input) => ({
-      id: input.id,
-      cover: input.cover,
-      isbn: parseIsbn(input.isbn),
-      title: input.title,
-      subtitle: input.subtitle,
+    const data = await getBooksData();
+    return data.books.map((input) => ({
       author: input.author,
-      published: input.published,
-      publisher: parseString(input.publisher),
-      pages: parseNumber(input.pages),
-      description: parseString(input.description),
-      website: parseString(input.website),
+      cover: input.cover,
+      id: input.id,
+      title: input.title,
     }));
   } catch (e) {
     return [];
+  }
+};
+
+export const getBooksByAuthor = async (
+  author: string,
+  exludeIds: string[] = []
+): Promise<IBook[]> => {
+  try {
+    const data = await getBooksData();
+    const predicate = (book: IBook) =>
+      book.author === author && !exludeIds.includes(book.id);
+
+    return data.books.filter(predicate).map((input) => ({
+      author: input.author,
+      cover: input.cover,
+      id: input.id,
+      title: input.title,
+    }));
+  } catch (e) {
+    return [];
+  }
+};
+
+export const getBook = async (
+  id: string | null
+): Promise<IBookDetails | null> => {
+  try {
+    const { books } = await getBooksData();
+    const match = books.find((book) => book.id === id);
+
+    if (match) {
+      return {
+        author: match.author,
+        cover: match.cover,
+        description: parseString(match.description),
+        id: match.id,
+        isbn: parseIsbn(match.isbn),
+        pages: parseNumber(match.pages),
+        published: match.published,
+        publisher: parseString(match.publisher),
+        subtitle: match.subtitle,
+        title: match.title,
+        website: parseString(match.website),
+      };
+    }
+
+    return null;
+  } catch (e) {
+    return null;
   }
 };
