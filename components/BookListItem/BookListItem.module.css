@@ -1,0 +1,40 @@
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  border-bottom: dashed 1px var(--border-color);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 460px) {
+  .container {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.cover {
+  margin-right: 1rem;
+  order: 0;
+}
+
+.details {
+  order: 1;
+}
+
+.coverImage {
+  border: solid 1px var(--border-color);
+  max-width: 120px;
+  height: auto;
+}
+
+.title {
+  margin: 0;
+}
+
+.link {
+  margin-top: 0.2rem;
+}

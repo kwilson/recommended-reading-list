@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookListItem /> renders as expected 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="details"
+    >
+      <h2
+        class="title"
+        data-testid="book-title"
+      >
+        title value
+      </h2>
+      <div
+        class="author"
+      >
+        by 
+        <span
+          data-testid="book-author"
+        >
+          author value
+        </span>
+      </div>
+      <div
+        class="link"
+        data-testid="book-link"
+      >
+        <a
+          href="/link%20value"
+        >
+          More Info
+        </a>
+      </div>
+    </div>
+    <div
+      class="cover"
+    >
+      <img
+        alt="title value book cover"
+        class="coverImage"
+        data-testid="book-image"
+        src="cover value"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
