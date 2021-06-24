@@ -34,9 +34,15 @@ Again, out of scope for the time given for this.
 ### UI
 Very rudimentary in styling. Could do with being wrapped in a component library to clean up the styles.
 
+### Images
+The thumbnail versions of the images are just the full-res versions scaled using CSS. If moving to prod, I'd want to either pre-process these or put an optimisation service in the middle.
+
 ## Assumptions
 
 ### API
 The single API endpoint isn't scalable or optimal, so I wrapped up calls to that in a local utils file. Depending on how this was going into production, I'd be looking to move that either into the API itself, or as an interceptor for the API.
 
 I thought about trimming out the superflous fields not required for the UI, but have left them for now since the benefit is pretty negligable with the size of the data set.
+
+### Data
+One of the ISBN values from the datset is 'unknown' so I've made the assumption that this is `null`.
